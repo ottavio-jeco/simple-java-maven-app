@@ -1,15 +1,17 @@
 pipeline {
-    agent { 
-    	docker { 
-    		image 'maven:3.8.4-openjdk-11-slim'
-    		args '-v /home/toti/.m2:/root/.m2'
-    	} 
+    agent {
+        docker {
+            image 'maven:3.8.1-adoptopenjdk-11' 
+            args '-v /home/toti/.m2:/root/.m2' 
+        }
     }
     stages {
-        stage('build') {
+        stage('Build') { 
             steps {
-                mvn -B -DskipTests clean package
+                sh 'mvn -B -DskipTests clean package' 
             }
         }
     }
 }
+
+
