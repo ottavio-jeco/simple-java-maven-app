@@ -45,6 +45,7 @@
             </manifest>
           </archive>
         </configuration>
+      <!--
       </plugin>
          <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
@@ -71,6 +72,7 @@
                 </execution>
             </executions>
         </plugin>
+        -->
     </plugins>
   </build>
 </project>
