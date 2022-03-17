@@ -31,11 +31,12 @@
 		<property name="wks_dir" location ="${jenkins.workspace}"/>
 		
 		
-		
-		<echo message="compile_classpath: ${compile_classpath}"/>
-		<echo message="wks_dir: ${wks_dir}"/>	
-		<echo message="jenkins.workspace: ${jenkins.workspace}" />
 		<echo message="basedir: ${basedir}" />
+		<echo message="compile_classpath: ${compile_classpath}"/>
+		
+		<echo message="jenkins.workspace: ${jenkins.workspace}" />
+		<echo message="wks_dir: ${wks_dir}"/>	
+		<echo message="appdata.rootdir: ${appdata.rootdir}" />
 		 <delete includeemptydirs="true" failonerror="false">
 		   <fileset dir="${wks_dir}/docker-data" includes="**/*"/>
 		</delete>    
@@ -48,6 +49,11 @@
                      <include name="*.war" />
                 </fileset>
             	</copy>
+               <copy todir="${wks_dir}/docker-data${appdata.rootdir}" overwrite="true" >
+		  <fileset dir="${wks_dir}">
+		  <include name="APPDATA/**" />
+		  </fileset>
+		</copy>
  		</target>
 		</configuration>
 		</execution>
