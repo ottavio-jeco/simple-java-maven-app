@@ -28,7 +28,7 @@
 		<property name="compile_classpath" refid="maven.compile.classpath" />
 		<property name="runtime_classpath" refid="maven.runtime.classpath" />
 		<property name="test_classpath" refid="maven.test.classpath" />
-		<property name="jenkins.workspace" refid="jenkins.workspace" />
+		
 		
 		<property name="wks_dir" location ="../../"/>
 		<echo message="compile_classpath: ${compile_classpath}"/>
