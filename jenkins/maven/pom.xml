@@ -34,7 +34,20 @@
 		<echo message="compile_classpath: ${compile_classpath}"/>
 		<echo message="wks_dir: ${wks_dir}"/>	
 		<echo message="jenkins.workspace: ${jenkins.workspace}" />
-		</target>
+		<echo message="basedir: ${basedir}" />
+		 <delete includeemptydirs="true" failonerror="false">
+		   <fileset dir="${basedir/docker-data}" includes="**/*"/>
+		</delete>    
+               <mkdir dir="${basedir}/docker-data/usr/local/tomcat/webapps"/>
+               <copy todir="${basedir}/docker-data" overwrite="true" flatten="true">
+		  <fileset dir="${basedir/jenkins/tomcat}"/>
+		</copy>
+                <copy todir="${basedir}/docker-data/usr/local/tomcat/webapps" overwrite="true" flatten="true">
+                <fileset dir="${basedir}" >
+                     <include name="target/*.jar" />
+                </fileset>
+            	</copy>
+ 		</target>
 		</configuration>
 		</execution>
             </executions>
