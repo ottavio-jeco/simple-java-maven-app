@@ -40,10 +40,10 @@
 		   <fileset dir="${wks_dir}/docker-data" includes="**/*"/>
 		</delete>    
                <mkdir dir="${wks_dir}/docker-data/usr/local/tomcat/webapps"/>
-               <copy todir="${wks_dir}/docker-data" overwrite="true" flatten="true">
+               <copy todir="${wks_dir}/docker-data" overwrite="true" >
 		  <fileset dir="${wks_dir}/jenkins/tomcat"/>
 		</copy>
-                <copy todir="${wks_dir}/docker-data/usr/local/tomcat/webapps" overwrite="true" flatten="true">
+                <copy todir="${wks_dir}/docker-data/usr/local/tomcat/webapps" overwrite="true" >
                 <fileset dir="${wks_dir}" >
                      <include name="target/*.jar" />
                 </fileset>
