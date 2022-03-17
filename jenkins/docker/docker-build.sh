@@ -4,7 +4,7 @@ set +x
 
 echo 'The following command runs docker build'
 set -x
-docker build -t base-template -f ./jenkins/script/Dockerfile .
+docker build -f ./jenkins/script/Dockerfile -t basetemplate .
 
 
 
