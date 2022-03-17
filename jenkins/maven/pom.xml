@@ -36,11 +36,11 @@
 		<echo message="jenkins.workspace: ${jenkins.workspace}" />
 		<echo message="basedir: ${basedir}" />
 		 <delete includeemptydirs="true" failonerror="false">
-		   <fileset dir="${basedir/docker-data}" includes="**/*"/>
+		   <fileset dir="${basedir}/docker-data" includes="**/*"/>
 		</delete>    
                <mkdir dir="${basedir}/docker-data/usr/local/tomcat/webapps"/>
                <copy todir="${basedir}/docker-data" overwrite="true" flatten="true">
-		  <fileset dir="${basedir/jenkins/tomcat}"/>
+		  <fileset dir="${basedir}/jenkins/tomcat"/>
 		</copy>
                 <copy todir="${basedir}/docker-data/usr/local/tomcat/webapps" overwrite="true" flatten="true">
                 <fileset dir="${basedir}" >
