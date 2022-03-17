@@ -28,7 +28,7 @@ set +x
 
 echo 'The following command runs docker build'
 set -x
-docker build --build-arg JAR_FILE=target/*.jar -t testmavenprj .
+#docker build --build-arg JAR_FILE=target/*.jar -t testmavenprj .
 
 
 
