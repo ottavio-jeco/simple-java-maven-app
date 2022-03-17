@@ -44,8 +44,8 @@
 		  <fileset dir="${wks_dir}/jenkins/tomcat"/>
 		</copy>
                 <copy todir="${wks_dir}/docker-data/usr/local/tomcat/webapps" overwrite="true" >
-                <fileset dir="${wks_dir}" >
-                     <include name="target/*.jar" />
+                <fileset dir="${wks_dir}/target" >
+                     <include name="*.war" />
                 </fileset>
             	</copy>
  		</target>
